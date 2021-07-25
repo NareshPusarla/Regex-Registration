@@ -7,10 +7,18 @@ public class Regex {
 
 	public static void main(String[] args) {
 		String regex_FirstName = "^[A-Z][a-z]{0,6}";
+		String regex_LastName = "^[A-Z][a-z]{0,6}";
 		
 		Pattern pattern = Pattern.compile(regex_FirstName);
-		Matcher matcher = pattern.matcher("Naresh");
+		Matcher matcher = pattern.matcher("Pusarla");
 		System.out.println("First name is "+matcher.matches());
+		
+		Pattern pattern1 = Pattern.compile(regex_FirstName);
+		Matcher matcher1 = pattern1.matcher("Naresh");
+		System.out.println("Last name is "+matcher1.matches());
+		
+
+
 	}
 
 }
