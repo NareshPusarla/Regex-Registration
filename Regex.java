@@ -10,6 +10,7 @@ public class Regex {
 		String regex_LastName = "^[A-Z]{1}[a-z]{0,6}";
 		String regex_for_email = "^[a-zA-Z0-9+._]+@[a-zA-Z0-9.]+$";
 		String regex_for_mobileNumber = "^[0-9+ ]{0,3}[0-9]{0,10}";
+		String regex_for_password = "^[a-z]{8,20}";
 		
 		Pattern pattern = Pattern.compile(regex_FirstName);
 		Matcher matcher = pattern.matcher("Pusarla");
@@ -26,6 +27,10 @@ public class Regex {
 		Pattern pattern3 = Pattern.compile(regex_for_mobileNumber);
 		Matcher matcher3 = pattern3.matcher("91 9502574183");
 		System.out.println("Mobile number is "+matcher3.matches());
+		
+		Pattern pattern4 = Pattern.compile(regex_for_password);
+		Matcher matcher4 = pattern4.matcher("password");
+		System.out.println("Password is "+matcher4.matches());
 	}
 
 }
