@@ -2,6 +2,8 @@ package com.bridgelabz.regex;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Scanner;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +14,28 @@ public class RegexTest {
 		@Before
 		public void setup() {
 			regex = new Regex();
+		}
+	
+		public static void main(String[] args) throws RegexException {
+			RegexTest rx = new RegexTest();
+			
+			try {
+			rx.testFirstName();
+			rx.testlastName();
+			rx.testemail();
+			rx.testMobileNumber();
+			rx.testPassword();
+			}
+			catch(Exception e){
+				throw new RegexException("Check the format once again.");
+			}
+			
+			rx.testFirstNameNegativeScenario();
+			rx.testLastNegativeScenario();
+			rx.testEmailNegativeScenario();
+			rx.testPasswordNegativeScenario();
+			rx.testMobileNumberNegativeScenario();
+			
 		}
 		
 		@Test
@@ -30,7 +54,7 @@ public class RegexTest {
 		}
 		
 		@Test(expected = NullPointerException.class)
-		public void testFirstLastNegativeScenario() {
+		public void testLastNegativeScenario() {
 			assertEquals(true, regex.validatelastName(null));
 		}
 		
